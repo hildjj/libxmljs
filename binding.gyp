@@ -30,7 +30,8 @@
             ],
           },
         }]
-      ]
+      ],
+      'defines': ['LIBXML_XINCLUDE_ENABLED']
     }
   ]
 }
