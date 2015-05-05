@@ -270,7 +270,7 @@
 /* #undef HAVE___VA_COPY */
 
 /* Define as const if the declaration of iconv() needs const. */
-#define ICONV_CONST 
+#define ICONV_CONST
 
 /* Define to the sub-directory in which libtool stores uninstalled libraries.
    */
@@ -301,7 +301,7 @@
 #define STDC_HEADERS 1
 
 /* Support for IPv6 */
-#define SUPPORT_IP6 /**/
+#define SUPPORT_IP6 1
 
 /* Version number of package */
 #define VERSION "2.9.0"
