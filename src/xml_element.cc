@@ -259,15 +259,15 @@ NAN_METHOD(XmlElement::AddNextSibling) {
 }
 
 NAN_METHOD(XmlElement::Replace) {
-  NanScope();
-  XmlElement* element = ObjectWrap::Unwrap<XmlElement>(args.Holder());
+  Nan::HandleScope scope;
+  XmlElement* element = Nan::ObjectWrap::Unwrap<XmlElement>(info.Holder());
   assert(element);
 
-  if (args[0]->IsString())
+  if (info[0]->IsString())
   {
-    element->replace_text(*v8::String::Utf8Value(args[0]));
+    element->replace_text(*v8::String::Utf8Value(info[0]));
   } else {
-    XmlElement* new_sibling = ObjectWrap::Unwrap<XmlElement>(args[0]->ToObject());
+    XmlElement* new_sibling = ObjectWrap::Unwrap<XmlElement>(info[0]->ToObject());
     assert(new_sibling);
 
     new_sibling = element->import_element(new_sibling);
@@ -275,7 +275,7 @@ NAN_METHOD(XmlElement::Replace) {
     element->replace_element(new_sibling);
   }
 
-  NanReturnValue(args[0]);
+  return info.GetReturnValue().Set(info[0]);
 }
 
 void
