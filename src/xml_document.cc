@@ -342,7 +342,7 @@ NAN_METHOD(XmlDocument::FromXml)
 
     if (opts & XML_PARSE_XINCLUDE) {
       if (xmlXIncludeProcessFlags(doc, opts) < 0) {
-        return NanThrowError("Could not process XIncludes");
+        return Nan::ThrowError("Could not process XIncludes");
       }
     }
 
